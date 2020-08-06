@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,7 @@ public class NextLevelHandler : MonoBehaviour
     {
         var currentscene = SceneManager.GetActiveScene().buildIndex;
         
-        if (currentscene + 1 != SceneManager.sceneCount)
+        if (currentscene + 1 != SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(currentscene + 1);
         }
