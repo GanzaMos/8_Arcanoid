@@ -25,6 +25,17 @@ public class LevelMenuScript : MonoBehaviour
     {
         WinTerms();
         CheckGamePause();
+        QuickWin();
+    }
+
+    private void QuickWin()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            winMenu.gameObject.SetActive(true);
+            Time.timeScale = 0; 
+        }
+
     }
 
     private void CheckGamePause()

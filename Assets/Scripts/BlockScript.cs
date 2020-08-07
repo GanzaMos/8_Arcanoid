@@ -6,6 +6,8 @@ using UnityEngine;
 public class BlockScript : MonoBehaviour
 {
     private LevelMenuScript winScript;
+
+    [SerializeField] private AudioClip destroyAudio;
     private void Start()
     {
         winScript = FindObjectOfType<LevelMenuScript>();
@@ -14,6 +16,7 @@ public class BlockScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         winScript.DecreaseBlockNumber();
+        AudioSource.PlayClipAtPoint(destroyAudio, transform.position);
         Destroy(gameObject);
     }
 }
