@@ -9,6 +9,8 @@ public class LevelMenuScript : MonoBehaviour
     GameObject winMenu;
     GameObject loseMenu;
     GameObject pauseMenu;
+
+    private ScoreScript _scoreScript;
     
     private int numberOfBlocks;
     bool isPauseMenuActive = false;
@@ -19,6 +21,7 @@ public class LevelMenuScript : MonoBehaviour
         pauseMenu = FindObjectOfType<PauseMenuIdentifier>(true).gameObject;
         winMenu = FindObjectOfType<WinMenuIdentifier>(true).gameObject;
         loseMenu = FindObjectOfType<LoseMenuIdentifier>(true).gameObject;
+        _scoreScript = FindObjectOfType<ScoreScript>();
     }
 
     private void Update()
@@ -80,6 +83,7 @@ public class LevelMenuScript : MonoBehaviour
 
     public void TryAgain()
     {
+        _scoreScript.AddScore(-_scoreScript.score);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }

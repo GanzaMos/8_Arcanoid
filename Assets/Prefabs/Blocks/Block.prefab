@@ -122,4 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4946e282363ed047be99f12564bda36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreAmount: 10
   destroyAudio: {fileID: 8300000, guid: 37f472c317956de479702517ff59d46b, type: 3}
+  deathFX: {fileID: 19800000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}

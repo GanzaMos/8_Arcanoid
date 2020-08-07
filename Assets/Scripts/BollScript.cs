@@ -12,7 +12,7 @@ public class BollScript : MonoBehaviour
     [SerializeField] private float xLaunchOffset = 0.1f;
 
     [SerializeField] private AudioClip[] _audioClips;
-
+    
     private AudioSource _audioSource;
     private Vector2 posPuddleToBall;
     private bool isStarted = false;
