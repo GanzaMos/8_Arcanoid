@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class LoseColliderScript : MonoBehaviour
 {
-    [SerializeField] private GameObject loseMenu;
+    private GameObject loseMenu;
 
     private void Awake()
     {
+        loseMenu = FindObjectOfType<LoseMenuIdentifier>(true).gameObject;
         loseMenu.SetActive(false);
     }
 
