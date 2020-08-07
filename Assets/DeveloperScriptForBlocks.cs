@@ -4,6 +4,12 @@
 public class DeveloperScriptForBlocks : MonoBehaviour
 
 { 
+    
+    void Awake()
+    {
+        SnapToGrid();
+    }
+    
     void Update()
     {
         SnapToGrid();

@@ -14,8 +14,11 @@ public class PaddleScript : MonoBehaviour
 
     private void PaddleMoving()
     {
-        var paddlePos = Input.mousePosition.x / Screen.width * widthInUnityLenght;
-        paddlePos = Mathf.Clamp(paddlePos, minX, maxX);
-        transform.position = new Vector2(paddlePos, 0.4f);
+        if (Time.timeScale != 0)
+        {
+            var paddlePos = Input.mousePosition.x / Screen.width * widthInUnityLenght;
+            paddlePos = Mathf.Clamp(paddlePos, minX, maxX);
+            transform.position = new Vector2(paddlePos, 0.4f);
+        }
     }
 }

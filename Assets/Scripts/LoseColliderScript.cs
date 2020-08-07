@@ -15,5 +15,6 @@ public class LoseColliderScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         loseMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 }
