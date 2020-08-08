@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block Black
       objectReference: {fileID: 0}
+    - target: {fileID: 1571164614117040532, guid: 618112c0a765d9640ada451dadcb5688, type: 3}
+      propertyPath: _blockType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1571164614117040533, guid: 618112c0a765d9640ada451dadcb5688, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -17,11 +17,23 @@ public class LevelMenuScript : MonoBehaviour
 
     private void Start()
     {
-        numberOfBlocks = FindObjectsOfType<BlockScript>().Length;
+        NumberOfBlocksCount();
         pauseMenu = FindObjectOfType<PauseMenuIdentifier>(true).gameObject;
         winMenu = FindObjectOfType<WinMenuIdentifier>(true).gameObject;
         loseMenu = FindObjectOfType<LoseMenuIdentifier>(true).gameObject;
         _scoreScript = FindObjectOfType<ScoreScript>();
+    }
+
+    private void NumberOfBlocksCount()
+    {
+        var allBlocks = FindObjectsOfType<BlockScript>();
+        foreach (var block in allBlocks)
+        {
+            if (block._blockType == BlockType.Breakeble)
+            {
+                numberOfBlocks++;
+            }
+        }
     }
 
     private void Update()

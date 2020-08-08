@@ -11,7 +11,9 @@ public class BlockScript : MonoBehaviour
     [SerializeField] private int scoreAmount = 10;
     [SerializeField] private AudioClip destroyAudio;
     [SerializeField] private ParticleSystem deathFX;
-    private void Start()
+    [SerializeField] public BlockType _blockType;
+
+private void Start()
     {
         winScript = FindObjectOfType<LevelMenuScript>();
         _scoreScript = FindObjectOfType<ScoreScript>();
@@ -19,11 +21,14 @@ public class BlockScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        winScript.DecreaseBlockNumber();
-        _scoreScript.AddScore(scoreAmount);
-        AudioSource.PlayClipAtPoint(destroyAudio, transform.position);
-        DeathParticles();
-        Destroy(gameObject);
+        if (_blockType == BlockType.Breakeble)
+        {
+            winScript.DecreaseBlockNumber();
+            _scoreScript.AddScore(scoreAmount);
+            AudioSource.PlayClipAtPoint(destroyAudio, transform.position);
+            DeathParticles();
+            Destroy(gameObject);
+        }
     }
 
     private void DeathParticles()
